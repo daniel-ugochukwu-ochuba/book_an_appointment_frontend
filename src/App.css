@@ -1,38 +1,47 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+  background: radial-gradient(circle, rgb(238, 238, 9) 50%, rgb(85, 64, 1) 100%);
+  height: 100vh;
+}
+
+nav {
+  position: fixed;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+footer {
+  position: relative;
+  ;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  background-image: url('./assests/house_PNG44.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  color: aliceblue;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: lobster;
+  margin-top: 20vh;
 }
