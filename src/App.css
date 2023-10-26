@@ -13,7 +13,6 @@ nav {
   position: fixed;
   display: flex;
   flex-direction: column;
-  
 }
 
 .list {
@@ -39,13 +38,12 @@ nav {
 
 .list.active li {
   list-style: none;
-  font-family: lobster;
+  font-family: lobster, sans-serif;
   font-size: 30px;
 }
 
 footer {
   position: relative;
-  ;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -66,7 +64,7 @@ footer {
 h1 {
   color: aliceblue;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: lobster;
+  font-family: lobster, sans-serif;
   margin-top: 20vh;
   font-size: 50px;
 }
@@ -88,6 +86,7 @@ h1 {
   border-radius: 5px;
   transition: 0.3s;
 }
+
 .dropbtn__icon2 {
   width: 20px;
   height: 4px;

@@ -7,13 +7,14 @@ function Navbar() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <nav className='dropdown'>
-      <button className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
-        <span className={`dropbtn__icon1 ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}></span>
-        <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}></span>
+    <nav className="dropdown">
+      <button type="button" className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
+        <span className={`dropbtn__icon1 ${isOpen ? 'active' : ''}`} />
+        <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} />
       </button>
-      <ul className={`list ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
+      <ul className={`list ${isOpen ? 'active' : ''}`}>
         <li>
           <img className="logo" src="https://www.freepnglogos.com/uploads/logo-home-png/vector-brush-home-logo-download-vector-logos-6.png" alt="logo" />
         </li>

@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/houses" element={<Houses />} />
       </Routes>
-      <div className='container'>
+      <div className="container">
         <h1>House Rental</h1>
       </div>
       <footer>Footer</footer>
