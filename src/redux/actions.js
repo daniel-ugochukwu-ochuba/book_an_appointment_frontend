@@ -1,11 +1,10 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
-// Action types
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
 const STORE_USER_DATA = 'STORE_USER_DATA';
 
-// Action creators
 export const loginSuccess = (token) => ({
   type: LOGIN_SUCCESS,
   payload: token,
@@ -21,29 +20,34 @@ export const storeUserData = (userData) => ({
   payload: userData,
 });
 
-// Thunk action creators
 export const login = (username, password) => async (dispatch) => {
   try {
-    const response = await axios.post('/api/v1/auth/login', { username, password });
+    const response = await axios.post('http://localhost:3000/api/v1/auth/login', { username, password });
     const { token } = response.data;
-    // Store the token in localStorage or cookies for future requests
-    // ...
+    Cookies.set('token', token, { expires: 7 });
+
     dispatch(loginSuccess(token));
   } catch (error) {
-    // Handle login error
-    // ...
+    if (error.response && error.response.data && error.response.data.error) {
+      throw new Error(error.response.data.error);
+    } else {
+      throw new Error('Login failed');
+    }
   }
 };
 
 export const register = (username, password) => async (dispatch) => {
   try {
-    const response = await axios.post('/api/v1/auth/register', { username, password });
+    const response = await axios.post('http://localhost:3000/api/v1/auth/register', { username, password });
     const { token } = response.data;
-    // Store the token in localStorage or cookies for future requests
-    // ...
+    Cookies.set('token', token, { expires: 7 });
+
     dispatch(registrationSuccess(token));
   } catch (error) {
-    // Handle registration error
-    // ...
+    if (error.response && error.response.data && error.response.data.error) {
+      throw new Error(error.response.data.error);
+    } else {
+      throw new Error('Registration failed');
+    }
   }
 };
