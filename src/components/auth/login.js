@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../redux/actions';
+import '../../styles/auth.css';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -19,22 +20,40 @@ const Login = () => {
     }
   };
 
+  const handleSignup = () => {
+    navigate('/register');
+  };
+
   return (
-    <div>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Username"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <button onClick={handleLogin} type="button">Login</button>
-      {error && <p>{error}</p>}
+    <div className="auth-container">
+      <div className="auth-form">
+        <h1>Login</h1>
+        <div className="input-group">
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+            className="input-field"
+          />
+        </div>
+        <div className="input-group">
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            className="input-field"
+          />
+        </div>
+        <button onClick={handleLogin} type="button" className="login-button">Login</button>
+        {error && <p className="error">{error}</p>}
+        <p className="signup-link">
+          Don&apos;t have an account?
+          {' '}
+          <button type="button" className="login-url" onClick={handleSignup}>Sign up</button>
+        </p>
+      </div>
     </div>
   );
 };
