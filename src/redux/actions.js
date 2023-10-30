@@ -22,7 +22,7 @@ export const storeUserData = (userData) => ({
 
 export const login = (username, password) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/auth/login', { username, password });
+    const response = await axios.post('http://127.0.0.1:3000/api/v1/auth/login', { username, password });
     const { token } = response.data;
     Cookies.set('token', token, { expires: 7 });
 
@@ -38,7 +38,7 @@ export const login = (username, password) => async (dispatch) => {
 
 export const register = (username, password) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/auth/register', { username, password });
+    const response = await axios.post('http://127.0.0.1:3000/api/v1/auth/register', { username, password });
     const { token } = response.data;
     Cookies.set('token', token, { expires: 7 });
 
