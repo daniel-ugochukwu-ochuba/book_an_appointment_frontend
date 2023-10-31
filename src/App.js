@@ -6,6 +6,7 @@ import Houses from './components/houses';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
 import PrivateRoute from './components/auth/private-route';
+import AddHouse from './components/houses/add-house';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route exact path="/" element={<PrivateRoute />}>
               <Route path="/houses" element={<Houses />} />
+              <Route path="/add-house" element={<AddHouse />} />
             </Route>
           </Routes>
         </main>
