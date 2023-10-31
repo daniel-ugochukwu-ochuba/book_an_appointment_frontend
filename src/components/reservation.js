@@ -1,8 +1,18 @@
 /* eslint-disable react/prop-types */
 
-import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReservation } from '../redux/reservation/reservationSlice';
 
 function Reservation() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchReservation());
+  }, [dispatch]);
+
+  const reservations = useSelector((state) => state.reservations.reservations);
+  console.log(reservations);
   return (
     <div className="slideTemplate">
       <div className="reserved-item">

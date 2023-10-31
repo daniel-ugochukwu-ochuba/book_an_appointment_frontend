@@ -27,7 +27,7 @@ export const reservationSlice = createSlice({
       })
       .addCase(fetchReservation.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.reservations = state.reservations.concat(action.payload);
+        state.reservations = action.payload;
       })
       .addCase(fetchReservation.rejected, (state, action) => {
         state.status = 'failed';
