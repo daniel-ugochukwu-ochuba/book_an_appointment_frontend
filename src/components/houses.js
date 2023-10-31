@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import '../assests/stylesheets/houses.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation, Pagination, Scrollbar, A11y,
 } from 'swiper/modules';
+import { fetchHouses } from '../redux/reservation/houseSlice';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css';
 
 function Houses() {
-  const slides = Array.from({ length: 10 }, (_, index) => index + 1);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchHouses());
+  }, [dispatch]);
+
+  const houses = useSelector((state) => state.houses.houses);
+  console.log(houses);
   return (
     <section className="houses-section">
       <h2>Houses</h2>
@@ -38,16 +46,20 @@ function Houses() {
           nextEl: '.next',
         }}
       >
-        {slides.map((slide) => (
+        {houses.map((slide) => (
           <SwiperSlide key={slide} style={{ display: 'flex' }} className="house">
             <div className="circle">
-              <div className="house-img" />
+              <img className="house-img" src="https://img2.freepng.es/20180308/dte/kisspng-architectural-rendering-architecture-villa-archite-houses-5aa17fb6bd6679.1252901815205334307758.jpg" alt="house" />
             </div>
             <div className="details">
-              <h3>NAME</h3>
-              <p>address: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p>description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p>Price Per Day: 100$</p>
+              <h3>{slide.name}</h3>
+              <p>{slide.address}</p>
+              <p>{slide.description}</p>
+              <p>
+                Price Per Day:
+                {slide.price_per_day}
+                $
+              </p>
             </div>
           </SwiperSlide>
         ))}
