@@ -1,6 +1,17 @@
+.houses-section {
+  background-color: gainsboro;
+  height: 100vh;
+}
+
 .swiper {
   position: relative;
   width: 60%;
+}
+
+.swiper-slide {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .house-img {
@@ -52,4 +63,11 @@
   left: 0;
   z-index: 10;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .prev,
+  .next {
+    display: none;
+  }
 }
