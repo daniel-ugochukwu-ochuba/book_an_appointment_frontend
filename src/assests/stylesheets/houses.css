@@ -17,6 +17,7 @@
 .house-img {
   width: 200px;
   height: 200px;
+  background-image: url('../house-png-199.png');
   background-size: cover;
 }
 

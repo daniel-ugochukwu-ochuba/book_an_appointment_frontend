@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import '../assests/stylesheets/houses.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Navigation, Pagination, Scrollbar, A11y,
 } from 'swiper/modules';
+
 import { fetchHouses } from '../redux/reservation/houseSlice';
+
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
