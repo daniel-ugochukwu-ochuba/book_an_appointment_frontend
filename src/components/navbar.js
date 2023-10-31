@@ -25,7 +25,10 @@ function Navbar() {
           <Link to="/houses">Houses</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/reserve">Reserve</Link>
+        </li>
+        <li>
+          <Link to="/reservations">Reservations</Link>
         </li>
         <div className="menu-footer">
           <div className="icons">
