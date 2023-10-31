@@ -8,6 +8,7 @@ import Login from './components/auth/login';
 import Register from './components/auth/register';
 import PrivateRoute from './components/auth/private-route';
 import './App.css';
+import DeleteHouses from './components/deleteHouses';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route exact path="/" element={<PrivateRoute />}>
               <Route path="/houses" element={<Houses />} />
+              <Route path="/delete" element={<DeleteHouses />} />
               <Route path="/reservations" element={<Reservations />} />
               <Route path="/reserve" element={<Houses />} />
             </Route>
