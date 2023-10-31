@@ -22,6 +22,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route exact path="/" element={<PrivateRoute />}>
               <Route path="/houses" element={<Houses />} />
+              <Route path="/reserve" element={<Houses />} />
+              <Route path="/reservations" element={<Houses />} />
             </Route>
           </Routes>
         </main>
