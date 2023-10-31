@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+:root {
+  --borderRadiusImg: 0px;
+  --ImgWidthSlide: 100%;
+  --marginTop: 0px;
+  --marginBottom: 0px;
+  --marginLeft: 0px;
+  --marginRight: 0px;
+  --marginTopTitle: 15px;
+  --marginBottomTitle: 15px;
+  --marginLeftTitle: 10px;
+  --marginRightTitle: 10px;
+
+  --paddingLeftRight: 0px;
+  --paddingTop: 0px;
+  --paddingBottom: 0px;
+  --paddingLeft: 0px;
+  --paddingRight: 0px;
+ 
+  --slideHeight: 350px;
+  --slideWidth: 200px;
+  --slideBorderRadiusSlide: 10px;
+  --slideBorderSize: 0px;
+  --slideBorderColor: #275efe;
+  --slideBorderType: solid;
+  --slideSolidBackgroundColor: #fff;
+  --screenWidth: 300px;
+  --spaceBtwSlideLeft: 10px;       /* Adjust left spacing between cards */
+  --spaceBtwSlideRight: 10px; 
+  --titleAlignment: left;
+  --titleColor: #5f637d;
+  --textColor: #5f637d;
+  --TitleSize: 16px;
+  --textSize: 12px;
+  --titleWeight: 600;
+}
 body {
   background: radial-gradient(circle, rgb(238, 238, 9) 50%, rgb(85, 64, 1) 100%);
   height: 100vh;
@@ -10,6 +45,7 @@ a {
 }
 
 nav {
+  z-index: 1;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -108,3 +144,177 @@ h1 {
 .logo {
   width: 200px;
 }
+
+/* RESERVATION SECTION */
+
+.containerVertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5% auto;
+  z-index: -9999;
+}
+
+.reservation-title {
+  margin: 0 ;
+  text-align: center;
+}
+
+.slideContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mainContainerCarouselFinal {
+  padding-left: 0px;
+  padding: 0px 0px 0px;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  padding-top: 12px;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 80%;
+  max-width: 1200px;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+  scroll-padding-left: 20%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 7% 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 7% 94%,
+    transparent 100%
+  );
+  mask-mode: alpha;
+  margin: 20px 0px 0px 0px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.days-info {
+  display: flex;
+}
+
+.slideTemplate {
+  display: inline-block;
+  width: var(--slideWidth);
+  height: var(--slideHeight);
+  border-radius: var(--slideBorderRadiusSlide);
+  border-radius: 50px 50px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px 0px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  margin: 20px;
+  border-width: var(--slideBorderSize);
+  border-color: var(--slideBorderColor);
+  border-style: var(--slideBorderType);
+  background-color: var(--slideSolidBackgroundColor);
+  overflow: hidden;
+  transition: 300ms ease-out;
+}
+
+.slideTemplate img {
+  width: var(--ImgWidthSlide);
+  height: var(--ImgHeightSlide);
+  margin-top: var(--marginTop);
+  margin-bottom: var(--marginBottom);
+  margin-left: var(--marginLeft);
+  margin-right: var(--marginRight);
+  padding-top: var(--paddingTop);
+  padding-bottom: var(--paddingBottom);
+  padding-left: var(--paddingLeft);
+  padding-right: var(--paddingRight);
+  border-radius: var(--borderRadiusImg);
+}
+
+.slideTemplate p,
+.slideTemplate h2 {
+  max-width: 200px;
+}
+
+.slideTemplate h2 {
+  margin-top: var(--marginTopTitle);
+  margin-bottom: var(--marginBottomTitle);
+  margin-left: var(--marginLeftTitle);
+  margin-right: var(--marginRightTitle);
+  text-align: var(--titleAlignment);
+  color: var(--titleColor);
+  font-size: var(--TitleSize);
+  font-weight: var(--titleWeight);
+  font-family: "Fira Sans", sans-serif;
+}
+
+.slideTemplate p {
+  margin-top: var(--marginTopText);
+  margin-bottom: var(--marginBottomText);
+  margin-left: var(--marginLeftText);
+  margin-right: var(--marginRightText);
+  text-align: var(--textAlignment);
+  color: var(--textColor);
+  font-size: var(--textSize);
+  font-weight: var(--textWeight);
+  white-space: initial;
+  line-height: 1.6;
+  padding-left: 1em;
+}
+
+.controlerFinalCarousel {
+  width: calc(var(--screenWidth));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.controlerFinalCarousel div {
+  text-align: center;
+  border: none;
+  height: 50px;
+  width: 60px;
+  display: flex;
+  margin: 10px 20px;
+  padding: 5px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px 0px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  backdrop-filter: blur(11px) saturate(180%);
+  -webkit-backdrop-filter: blur(11px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-nav {
+  top: 50%;
+  left: 0;
+  position: absolute;
+  border-radius: 0 50px 50px 0;
+}
+
+.left-nav img {
+  transform: rotate(180deg)
+}
+
+.right-nav {
+  top: 50%;
+  right: 0;
+  position: absolute;
+  border-radius: 50px 0 0 50px;
+}
+
+.controlerFinalCarousel div img {
+  width: 16px;
+}
+
