@@ -14,7 +14,6 @@ function Reservations() {
     const nbSlide = 10;
 
     if (!nextBtn || !prevBtn || !container || !slide) {
-      console.error('One or more elements not found');
       return;
     }
 
