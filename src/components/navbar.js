@@ -30,6 +30,9 @@ function Navbar() {
         <li>
           <Link to="/reservations">Reservations</Link>
         </li>
+        <li>
+          <Link to="/delete">Delete House</Link>
+        </li>
         <div className="menu-footer">
           <div className="icons">
             <img className="logo" src="https://cdn-icons-png.flaticon.com/128/733/733635.png" alt="logo" />
