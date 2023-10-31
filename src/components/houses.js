@@ -19,7 +19,7 @@ function Houses() {
   }, [dispatch]);
 
   const houses = useSelector((state) => state.houses.houses);
-  console.log(houses);
+
   return (
     <section className="houses-section">
       <h2>Houses</h2>
