@@ -22,11 +22,24 @@ function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/houses">houses</Link>
+          <Link to="/houses">Houses</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/reserve">Reserve</Link>
         </li>
+        <li>
+          <Link to="/reservations">Reservations</Link>
+        </li>
+        <div className="menu-footer">
+          <div className="icons">
+            <img className="logo" src="https://cdn-icons-png.flaticon.com/128/733/733635.png" alt="logo" />
+            <img className="logo" src="https://cdn-icons-png.flaticon.com/128/20/20837.png" alt="logo" />
+            <img className="logo" src="https://cdn-icons-png.flaticon.com/128/59/59490.png" alt="logo" />
+            <img className="logo" src="https://cdn-icons-png.flaticon.com/128/4926/4926536.png" alt="logo" />
+            <img className="logo" src="https://cdn-icons-png.flaticon.com/128/152/152817.png" alt="logo" />
+          </div>
+          <p className="copy">Copyright © 2023</p>
+        </div>
       </ul>
     </nav>
   );
