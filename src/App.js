@@ -9,6 +9,7 @@ import Login from './components/auth/login';
 import Register from './components/auth/register';
 import PrivateRoute from './components/auth/private-route';
 import AddHouse from './components/houses/add-house';
+import ReserveHouse from './components/reservations/reserve-house';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
@@ -28,7 +29,7 @@ function App() {
               <Route path="/houses" element={<Houses />} />
               <Route path="/add-house" element={<AddHouse />} />
               <Route path="/reservations" element={<Reservations />} />
-              <Route path="/reserve" element={<Houses />} />
+              <Route path="/reserve-house" element={<ReserveHouse />} />
             </Route>
           </Routes>
           <ToastContainer />
