@@ -35,9 +35,11 @@ label {
   font-family: 'Roboto', sans-serif;
 }
 
-input[type='text'],
-textarea,
-input[type='number'] {
+.input-house-name,
+.input-house-address,
+.input-house-description,
+.input-house-price,
+.input-house-image {
   padding: 10px;
   border: 1px solid #e0e0e0; /* Added border for input elements */
   margin-bottom: 1rem;
@@ -46,14 +48,16 @@ input[type='number'] {
   font-family: 'Roboto', sans-serif;
 }
 
-input[type='text']:focus,
-textarea:focus,
-input[type='number']:focus {
+.input-house-name:focus,
+.input-house-address:focus,
+.input-house-description:focus,
+.input-house-price:focus,
+.input-house-image:focus {
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button {
+.add-house-button {
   padding: 10px 30px;
   background-color: #4caf50;
   color: white;
@@ -66,7 +70,7 @@ button {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
+.add-house-button:hover {
   background-color: #45a049;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
