@@ -1,7 +1,3 @@
-body {
-  background: radial-gradient(circle, rgb(238, 238, 9) 50%, rgb(85, 64, 1) 100%);
-}
-
 .auth-container {
   display: flex;
   justify-content: center;

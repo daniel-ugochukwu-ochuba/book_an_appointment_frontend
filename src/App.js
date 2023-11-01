@@ -26,6 +26,8 @@ function App() {
             <Route exact path="/" element={<PrivateRoute />}>
               <Route path="/houses" element={<Houses />} />
               <Route path="/add-house" element={<AddHouse />} />
+              <Route path="/reserve" element={<Houses />} />
+              <Route path="/reservations" element={<Houses />} />
             </Route>
           </Routes>
           <ToastContainer />
