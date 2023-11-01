@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-// Action types
+
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
 const STORE_USER_DATA = 'STORE_USER_DATA';
-// Reducer for authentication state
+const ADD_HOUSE_SUCCESS = 'ADD_HOUSE_SUCCESS';
+
 const authenticationReducer = (state = null, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
@@ -14,7 +15,6 @@ const authenticationReducer = (state = null, action) => {
   }
 };
 
-// Reducer for user data
 const userReducer = (state = null, action) => {
   switch (action.type) {
     case STORE_USER_DATA:
@@ -24,10 +24,19 @@ const userReducer = (state = null, action) => {
   }
 };
 
-// Combine all reducers into a root reducer
+const houseReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD_HOUSE_SUCCESS:
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
   authentication: authenticationReducer,
   user: userReducer,
+  houses: houseReducer,
 });
 
 export default rootReducer;
