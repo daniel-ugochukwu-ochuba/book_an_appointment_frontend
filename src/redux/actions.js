@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
@@ -67,11 +68,14 @@ export const addHouse = (houseData) => async (dispatch) => {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    toast.success(`${houseData.name} house added succesfully`);
     dispatch(addHouseSuccess(response.data));
   } catch (error) {
     if (error.response && error.response.data && error.response.data.error) {
       throw new Error(error.response.data.error);
     } else {
+      toast.error('something went wrong');
       throw new Error('Registration failed');
     }
   }
