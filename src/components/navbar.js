@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -27,9 +28,11 @@ function Navbar() {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        {Cookies.get('token') && (
         <li>
           <Link to="/add-house">Add House</Link>
         </li>
+        )}
       </ul>
     </nav>
   );
