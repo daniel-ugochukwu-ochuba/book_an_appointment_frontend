@@ -27,6 +27,9 @@ function Navbar() {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <li>
+          <Link to="/add-house">Add House</Link>
+        </li>
       </ul>
     </nav>
   );

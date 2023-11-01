@@ -79,6 +79,7 @@ const AddHouse = () => {
           type="text"
           name="name"
           id="name"
+          className="input-house-name"
           value={formData.name}
           placeholder="Enter the house name"
           onChange={handleChange}
@@ -89,6 +90,7 @@ const AddHouse = () => {
           name="address"
           placeholder="Enter the house address"
           id="address"
+          className="input-house-address"
           value={formData.address}
           onChange={handleChange}
         />
@@ -96,6 +98,7 @@ const AddHouse = () => {
         <textarea
           name="description"
           id="description"
+          className="input-house-description"
           placeholder="Enter the house description"
           value={formData.description}
           onChange={handleChange}
@@ -105,6 +108,7 @@ const AddHouse = () => {
           type="number"
           name="price_per_day"
           id="price_per_day"
+          className="input-house-price"
           placeholder="Enter rental price per day"
           value={formData.price_per_day}
           onChange={handleChange}
@@ -114,12 +118,13 @@ const AddHouse = () => {
           type="text"
           name="image"
           id="image"
+          className="input-house-image"
           placeholder="Enter the house image url"
           value={formData.image}
           onChange={handleChange}
         />
         {errors.image && <span className="error">{errors.image}</span>}
-        <button type="submit">Add House</button>
+        <button className="add-house-button" type="submit">Add House</button>
       </form>
     </div>
   );
