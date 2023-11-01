@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addHouse } from '../../redux/actions';
-import '../../styles/add-house.css';
+import '../../assests/stylesheets/add-house.css';
 
 const AddHouse = () => {
   const dispatch = useDispatch();
