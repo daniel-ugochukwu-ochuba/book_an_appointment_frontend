@@ -80,3 +80,17 @@ export const addHouse = (houseData) => async (dispatch) => {
     }
   }
 };
+
+export const getHouseByName = async (name) => {
+  try {
+    const response = await axios.get(`http://127.0.0.1:3000//api/v1/houses/find_by_name?name=${name}`);
+    return response.data;
+  } catch (error) {
+    if (error.response && error.response.data && error.response.data.error) {
+      throw new Error(error.response.data.error);
+    } else {
+      toast.error('something went wrong');
+      throw new Error('Something went wrong');
+    }
+  }
+};
