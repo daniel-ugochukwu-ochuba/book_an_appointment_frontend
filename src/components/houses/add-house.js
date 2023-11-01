@@ -76,60 +76,62 @@ const AddHouse = () => {
   };
 
   return (
-    <div className="add-house-container">
-      <form className="add-house-form" onSubmit={handleSubmit}>
-        <h2 className="add-house-title">Add House</h2>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          className="input-house-name"
-          value={formData.name}
-          placeholder="Enter the house name"
-          onChange={handleChange}
-        />
-        {errors.name && <span className="error">{errors.name}</span>}
-        <input
-          type="text"
-          name="address"
-          placeholder="Enter the house address"
-          id="address"
-          className="input-house-address"
-          value={formData.address}
-          onChange={handleChange}
-        />
-        {errors.address && <span className="error">{errors.address}</span>}
-        <textarea
-          name="description"
-          id="description"
-          className="input-house-description"
-          placeholder="Enter the house description"
-          value={formData.description}
-          onChange={handleChange}
-        />
-        {errors.description && <span className="error">{errors.description}</span>}
-        <input
-          type="number"
-          name="price_per_day"
-          id="price_per_day"
-          className="input-house-price"
-          placeholder="Enter rental price per day"
-          value={formData.price_per_day}
-          onChange={handleChange}
-        />
-        {errors.price_per_day && <span className="error">{errors.price_per_day}</span>}
-        <input
-          type="text"
-          name="image"
-          id="image"
-          className="input-house-image"
-          placeholder="Enter the house image url"
-          value={formData.image}
-          onChange={handleChange}
-        />
-        {errors.image && <span className="error">{errors.image}</span>}
-        <button className="add-house-button" type="submit">Add House</button>
-      </form>
+    <div className="add-house-body">
+      <div className="add-house-container">
+        <form className="add-house-form" onSubmit={handleSubmit}>
+          <h2 className="add-house-title">Add House</h2>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="input-house-name"
+            value={formData.name}
+            placeholder="Enter the house name"
+            onChange={handleChange}
+          />
+          {errors.name && <span className="error">{errors.name}</span>}
+          <input
+            type="text"
+            name="address"
+            placeholder="Enter the house address"
+            id="address"
+            className="input-house-address"
+            value={formData.address}
+            onChange={handleChange}
+          />
+          {errors.address && <span className="error">{errors.address}</span>}
+          <textarea
+            name="description"
+            id="description"
+            className="input-house-description"
+            placeholder="Enter the house description"
+            value={formData.description}
+            onChange={handleChange}
+          />
+          {errors.description && <span className="error">{errors.description}</span>}
+          <input
+            type="number"
+            name="price_per_day"
+            id="price_per_day"
+            className="input-house-price"
+            placeholder="Enter rental price per day"
+            value={formData.price_per_day}
+            onChange={handleChange}
+          />
+          {errors.price_per_day && <span className="error">{errors.price_per_day}</span>}
+          <input
+            type="text"
+            name="image"
+            id="image"
+            className="input-house-image"
+            placeholder="Enter the house image url"
+            value={formData.image}
+            onChange={handleChange}
+          />
+          {errors.image && <span className="error">{errors.image}</span>}
+          <button className="add-house-button" type="submit">Add House</button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -2,13 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 0;
+  height: 100vh;
+  background-color: gainsboro;
 }
 
 .add-house-title {
-  font-size: 24px;
+  font-size: 50px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  padding: 7vh 0;
 }
 
 .add-house-form {
@@ -17,6 +20,8 @@
   align-items: center;
   width: 50%;
   padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
