@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import Houses from './components/houses';
+import Reservations from './components/reservations';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
 import PrivateRoute from './components/auth/private-route';
@@ -26,8 +27,8 @@ function App() {
             <Route exact path="/" element={<PrivateRoute />}>
               <Route path="/houses" element={<Houses />} />
               <Route path="/add-house" element={<AddHouse />} />
+              <Route path="/reservations" element={<Reservations />} />
               <Route path="/reserve" element={<Houses />} />
-              <Route path="/reservations" element={<Houses />} />
             </Route>
           </Routes>
           <ToastContainer />
