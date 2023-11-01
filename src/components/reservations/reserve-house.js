@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-import { getHouseByName } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { addReservation, getHouseByName } from '../../redux/actions';
 import '../../assests/stylesheets/add-reservation.css';
 
 const ReserveHouse = () => {
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -81,7 +81,7 @@ const ReserveHouse = () => {
     }
 
     if (validateForm()) {
-    //   dispatch(addHouse(formData));
+      dispatch(addReservation(formData, house));
       resetForm();
       navigate('/reservations');
     }
@@ -92,34 +92,44 @@ const ReserveHouse = () => {
       <form className="add-reservation-form" onSubmit={handleSubmit}>
         <h2 className="add-reservation-title">Add Reservation</h2>
         <div className="inputs-fields">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className="input-house-name"
-            value={formData.name}
-            placeholder="Enter the house name"
-            onChange={handleChange}
-          />
-          {errors.name && <span className="error">{errors.name}</span>}
-          <input
-            type="date"
-            name="startDate"
-            id="start_date"
-            className="input-reservation-date"
-            value={formData.startDate}
-            onChange={handleChange}
-          />
-          {errors.startDate && <span className="error">{errors.startDate}</span>}
-          <input
-            type="number"
-            name="numberOfDays"
-            id="number_of_days"
-            className="input-reservation-days"
-            placeholder="Enter rental price per day"
-            value={formData.numberOfDays}
-            onChange={handleChange}
-          />
+          <div className="form-group">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="input-house-name"
+              value={formData.name}
+              placeholder="Enter the house name"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label htmlFor="start_date">Start Date:</label>
+            <input
+              type="date"
+              name="startDate"
+              id="start_date"
+              className="input-reservation-date"
+              value={formData.startDate}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label htmlFor="number_of_days">Number of Days:</label>
+            <input
+              type="number"
+              name="numberOfDays"
+              id="number_of_days"
+              className="input-reservation-days"
+              placeholder="Enter rental price per day"
+              value={formData.numberOfDays}
+              onChange={handleChange}
+            />
+          </div>
         </div>
         {errors.numberOfDays && <span className="error">{errors.numberOfDays}</span>}
         <button className="add-reservation-button" type="submit">Reserve House</button>
