@@ -11,10 +11,13 @@ function Navbar() {
 
   return (
     <nav className="dropdown">
-      <button type="button" className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
-        <span className={`dropbtn__icon1 ${isOpen ? 'active' : ''}`} />
-        <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} />
-      </button>
+      <label htmlFor="dropbtn">
+        <button type="button" className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
+          <span className={`dropbtn__icon1 ${isOpen ? 'active' : ''}`} />
+          <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} />
+        </button>
+        <span>Button Label</span>
+      </label>
       <ul className={`list ${isOpen ? 'active' : ''}`}>
         <li>
           <img className="logo" src="https://www.freepnglogos.com/uploads/logo-home-png/vector-brush-home-logo-download-vector-logos-6.png" alt="logo" />
