@@ -22,13 +22,10 @@ function DeleteHouses() {
   }, [dispatch]);
 
   const handleDeleteHouse = (houseId) => {
-    console.log('hi');
     dispatch(deleteHouse(houseId));
   };
 
   const houses = useSelector((state) => state.houses.houses);
-  console.log(houses);
-  const slides = Array.from({ length: 10 }, (_, index) => index + 1);
   return (
     <section className="houses-section">
       <h2>Houses</h2>
@@ -55,18 +52,21 @@ function DeleteHouses() {
           nextEl: '.next',
         }}
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide} style={{ display: 'flex' }} className="house">
+        {houses.map((house) => (
+          <SwiperSlide key={house.id} style={{ display: 'flex' }} className="house">
             <div className="circle">
-              <img className="house-img" src="https://img2.freepng.es/20180308/dte/kisspng-architectural-rendering-architecture-villa-archite-houses-5aa17fb6bd6679.1252901815205334307758.jpg" alt="house" />
+              <img className="house-img" src={house.image} alt="house" />
             </div>
             <div className="details">
-              <h3>Winconston</h3>
+              <h3>{house.name}</h3>
               <button
                 type="button"
                 className="delete-btn"
                 onClick={() => {
-                  handleDeleteHouse(slide.id);
+                  const shouldDelete = window.confirm('Are you sure you want to delete this house?');
+                  if (shouldDelete) {
+                    handleDeleteHouse(house.id);
+                  }
                 }}
               >
                 Delete
