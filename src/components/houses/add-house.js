@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addHouse } from '../../redux/actions';
 import '../../styles/add-house.css';
 
 const AddHouse = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     address: '',
@@ -68,6 +71,7 @@ const AddHouse = () => {
     if (validateForm()) {
       dispatch(addHouse(formData));
       resetForm();
+      navigate('/houses');
     }
   };
 
