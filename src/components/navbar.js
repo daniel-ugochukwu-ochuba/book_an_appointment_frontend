@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <nav className="dropdown">
-      <button type="button" className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
+      <button className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
         <span className={`dropbtn__icon1 ${isOpen ? 'active' : ''}`} />
         <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} />
       </button>
