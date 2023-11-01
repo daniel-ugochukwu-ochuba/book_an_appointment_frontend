@@ -105,7 +105,7 @@ export const addReservation = (reservationData, houseData) => async (dispatch) =
       },
     });
 
-    toast.success(`${reservationData.name} reservation added succesfully added succesfully`);
+    toast.success(`${reservationData.name} reservation added succesfully`);
     dispatch(addHouseSuccess(response.data));
   } catch (error) {
     if (error.response && error.response.data && error.response.data.error) {
