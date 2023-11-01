@@ -26,7 +26,7 @@ function Navbar() {
           <Link to="/houses">Houses</Link>
         </li>
         <li>
-          <Link to="/reserve">Reserve</Link>
+          <Link to="/reserve-house">Reserve</Link>
         </li>
         {Cookies.get('token') && (
         <li>
