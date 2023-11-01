@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import Houses from './components/houses';
@@ -7,6 +8,7 @@ import Login from './components/auth/login';
 import Register from './components/auth/register';
 import PrivateRoute from './components/auth/private-route';
 import AddHouse from './components/houses/add-house';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
               <Route path="/add-house" element={<AddHouse />} />
             </Route>
           </Routes>
+          <ToastContainer />
         </main>
       </>
     </>
