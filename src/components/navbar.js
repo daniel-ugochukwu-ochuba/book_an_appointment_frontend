@@ -11,7 +11,6 @@ function Navbar() {
 
   return (
     <nav className="dropdown">
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <button type="button" className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
         <span className={`dropbtn__icon1 ${isOpen ? 'active' : ''}`} />
         <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} />
