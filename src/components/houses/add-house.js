@@ -73,57 +73,52 @@ const AddHouse = () => {
 
   return (
     <div className="add-house-container">
-      <h2 className="add-house-title">Add House</h2>
       <form className="add-house-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          {errors.name && <span className="error">{errors.name}</span>}
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="address"
-            id="address"
-            value={formData.address}
-            onChange={handleChange}
-          />
-          {errors.address && <span className="error">{errors.address}</span>}
-        </div>
-        <div className="form-group">
-          <textarea
-            name="description"
-            id="description"
-            value={formData.description}
-            onChange={handleChange}
-          />
-          {errors.description && <span className="error">{errors.description}</span>}
-        </div>
-        <div className="form-group">
-          <input
-            type="number"
-            name="price_per_day"
-            id="price_per_day"
-            value={formData.price_per_day}
-            onChange={handleChange}
-          />
-          {errors.price_per_day && <span className="error">{errors.price_per_day}</span>}
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="image"
-            id="image"
-            value={formData.image}
-            onChange={handleChange}
-          />
-          {errors.image && <span className="error">{errors.image}</span>}
-        </div>
+        <h2 className="add-house-title">Add House</h2>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={formData.name}
+          placeholder="Enter the house name"
+          onChange={handleChange}
+        />
+        {errors.name && <span className="error">{errors.name}</span>}
+        <input
+          type="text"
+          name="address"
+          placeholder="Enter the house address"
+          id="address"
+          value={formData.address}
+          onChange={handleChange}
+        />
+        {errors.address && <span className="error">{errors.address}</span>}
+        <textarea
+          name="description"
+          id="description"
+          placeholder="Enter the house description"
+          value={formData.description}
+          onChange={handleChange}
+        />
+        {errors.description && <span className="error">{errors.description}</span>}
+        <input
+          type="number"
+          name="price_per_day"
+          id="price_per_day"
+          placeholder="Enter rental price per day"
+          value={formData.price_per_day}
+          onChange={handleChange}
+        />
+        {errors.price_per_day && <span className="error">{errors.price_per_day}</span>}
+        <input
+          type="text"
+          name="image"
+          id="image"
+          placeholder="Enter the house image url"
+          value={formData.image}
+          onChange={handleChange}
+        />
+        {errors.image && <span className="error">{errors.image}</span>}
         <button type="submit">Add House</button>
       </form>
     </div>
