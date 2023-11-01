@@ -4,7 +4,7 @@
   align-items: center;
   margin-top: 0;
   height: 100vh;
-  background-color: rgba(220, 220, 220, 0.8);
+  background-color: rgb(243, 243, 243);
 }
 
 .add-house-title {
@@ -20,7 +20,7 @@
   align-items: center;
   width: 50%;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 10vh;
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #e0e0e0;
@@ -73,10 +73,11 @@ label {
   font-family: 'Roboto', sans-serif;
   align-self: center;
   margin-top: 20px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .add-house-button:hover {
+  transform: scale(1.05);
   background-color: #45a049;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -85,4 +86,10 @@ label {
   color: red;
   margin-top: 5px;
   font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .add-house-form {
+    width: 95%;
+  }
 }

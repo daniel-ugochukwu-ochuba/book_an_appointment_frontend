@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import '../assests/stylesheets/houses.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
@@ -16,7 +16,6 @@ import 'swiper/css';
 
 function Houses() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchHouses());
   }, [dispatch]);
@@ -50,24 +49,30 @@ function Houses() {
         }}
       >
         {houses.map((slide) => (
-          <SwiperSlide key={slide} style={{ display: 'flex' }} className="house">
-            <div className="circle">
-              <img className="house-img" src="https://img2.freepng.es/20180308/dte/kisspng-architectural-rendering-architecture-villa-archite-houses-5aa17fb6bd6679.1252901815205334307758.jpg" alt="house" />
-            </div>
-            <div className="details">
-              <h3>{slide.name}</h3>
-              <p>{slide.address}</p>
-              <p>{slide.description}</p>
-              <p>
-                Price Per Day:
-                {slide.price_per_day}
-                $
-              </p>
-            </div>
+          <SwiperSlide
+            key={slide.id}
+            style={{ display: 'flex' }}
+            className="house"
+          >
+            <Link className="link" to={`/houses/${slide.id}`} state={{ house: slide }}>
+              <div className="circle">
+                <img className="house-img" src={slide.image} alt="house" />
+              </div>
+              <div className="details">
+                <h3>{slide.name}</h3>
+                <p>{slide.address}</p>
+                <p>{slide.description}</p>
+                <p>
+                  Price Per Day:
+                  {slide.price_per_day}
+                  $
+                </p>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
-        <div className="prev">«</div>
-        <div className="next">»</div>
+        <div className="prev">◁</div>
+        <div className="next">▷</div>
       </Swiper>
     </section>
   );

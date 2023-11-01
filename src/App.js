@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Navbar from './components/navbar';
 import Home from './components/home';
 import Houses from './components/houses';
+import HouseDetails from './components/houses/houseDetails';
 import Reservations from './components/reservations';
 import Login from './components/auth/login';
 import Register from './components/auth/register';
@@ -29,6 +30,7 @@ function App() {
               <Route path="/add-house" element={<AddHouse />} />
               <Route path="/reservations" element={<Reservations />} />
               <Route path="/reserve" element={<Houses />} />
+              <Route path="/houses/:id" element={<HouseDetails />} />
             </Route>
           </Routes>
           <ToastContainer />
