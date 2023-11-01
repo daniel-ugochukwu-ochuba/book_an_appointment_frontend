@@ -93,42 +93,46 @@ const ReserveHouse = () => {
         <h2 className="add-reservation-title">Add Reservation</h2>
         <div className="inputs-fields">
           <div className="form-group">
-            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="input-house-name"
-              value={formData.name}
-              placeholder="Enter the house name"
-              onChange={handleChange}
-            />
+            <label htmlFor="name">
+              Name:
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="input-house-name"
+                value={formData.name}
+                placeholder="Enter the house name"
+                onChange={handleChange}
+              />
+            </label>
           </div>
           <div className="form-group">
-            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-            <label htmlFor="start_date">Start Date:</label>
-            <input
-              type="date"
-              name="startDate"
-              id="start_date"
-              className="input-reservation-date"
-              value={formData.startDate}
-              onChange={handleChange}
-            />
+            <label htmlFor="start_date">
+              Start Date:
+              <input
+                type="date"
+                name="startDate"
+                id="start_date"
+                className="input-reservation-date"
+                value={formData.startDate}
+                onChange={handleChange}
+              />
+            </label>
           </div>
           <div className="form-group">
-            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-            <label htmlFor="number_of_days">Number of Days:</label>
-            <input
-              type="number"
-              name="numberOfDays"
-              id="number_of_days"
-              className="input-reservation-days"
-              placeholder="Enter rental price per day"
-              value={formData.numberOfDays}
-              onChange={handleChange}
-            />
+            <label htmlFor="number_of_days">
+              Number of Days:
+              <input
+                type="number"
+                name="numberOfDays"
+                id="number_of_days"
+                className="input-reservation-days"
+                placeholder="Enter rental price per day"
+                value={formData.numberOfDays}
+                onChange={handleChange}
+              />
+            </label>
+
           </div>
         </div>
         {errors.numberOfDays && <span className="error">{errors.numberOfDays}</span>}
