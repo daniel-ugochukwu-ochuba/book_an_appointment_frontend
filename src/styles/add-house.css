@@ -4,7 +4,7 @@
   align-items: center;
   margin-top: 0;
   height: 100vh;
-  background-color: gainsboro;
+  background-color: rgba(220, 220, 220, 0.8);
 }
 
 .add-house-title {
@@ -22,7 +22,7 @@
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -46,11 +46,12 @@ label {
 .input-house-price,
 .input-house-image {
   padding: 10px;
-  border: 1px solid #e0e0e0; /* Added border for input elements */
+  border: 1px solid #e0e0e0;
   margin-bottom: 1rem;
   width: 100%;
   border-radius: 4px;
   font-family: 'Roboto', sans-serif;
+  background-color: rgba(255, 255, 255, 0.7); /* Input background color with transparency */
 }
 
 .input-house-name:focus,
@@ -73,6 +74,7 @@ label {
   align-self: center;
   margin-top: 20px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #4caf50; /* Button background color */
 }
 
 .add-house-button:hover {

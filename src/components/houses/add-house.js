@@ -16,9 +16,13 @@ const AddHouse = () => {
     image: '',
   });
   const [errors, setErrors] = useState({});
+  const [backgroundImage, setBackgroundImage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.name === 'image') {
+      setBackgroundImage(e.target.value);
+    }
   };
 
   const validateForm = () => {
@@ -74,9 +78,16 @@ const AddHouse = () => {
       navigate('/houses');
     }
   };
+  const pageStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center center',
+  };
 
   return (
-    <div className="add-house-body">
+    <div className="add-house-body" style={pageStyle}>
       <div className="add-house-container">
         <form className="add-house-form" onSubmit={handleSubmit}>
           <h2 className="add-house-title">Add House</h2>
