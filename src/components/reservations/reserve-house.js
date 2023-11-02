@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addReservation, getHouseByName } from '../../redux/actions';
 import '../../assests/stylesheets/add-reservation.css';
@@ -7,15 +7,38 @@ import '../../assests/stylesheets/add-reservation.css';
 const ReserveHouse = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const houseNameFromQuery = queryParams.get('name');
 
   const [formData, setFormData] = useState({
     name: '',
     numberOfDays: 0,
     startDate: '',
   });
+
   const [errors, setErrors] = useState({});
   const [house, setHouse] = useState({});
   const [submitEnabled, setSubmitEnabled] = useState(false);
+
+  useEffect(() => {
+    if (houseNameFromQuery !== null) {
+      (async () => {
+        try {
+          const fetchedHouse = await getHouseByName(houseNameFromQuery);
+          setHouse(fetchedHouse);
+          setSubmitEnabled(true);
+          setFormData((prevData) => ({ ...prevData, name: fetchedHouse.name }));
+        } catch (error) {
+          if (error.message === 'House not found') {
+            setHouse({});
+            setSubmitEnabled(false);
+            setErrors({ ...errors, message: 'House not found' });
+          }
+        }
+      })();
+    }
+  }, [houseNameFromQuery]);
 
   const handleChange = async (e) => {
     const { name, value } = e.target;
@@ -76,7 +99,6 @@ const ReserveHouse = () => {
     e.preventDefault();
 
     if (!submitEnabled) {
-      e.preventDefault();
       return;
     }
 
@@ -100,7 +122,7 @@ const ReserveHouse = () => {
                 name="name"
                 id="name"
                 className="input-house-name"
-                value={formData.name}
+                value={formData.name || houseNameFromQuery}
                 placeholder="Enter the house name"
                 onChange={handleChange}
               />
