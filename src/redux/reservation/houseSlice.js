@@ -25,6 +25,20 @@ export const fetchUserHouses = createAsyncThunk(
   },
 );
 
+export const deleteHouse = createAsyncThunk(
+  'house/deleteHouse',
+  async (houseId) => {
+    const response = await fetch(`http://localhost:3000/api/v1/houses/${houseId}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      return houseId; // Return the ID of the deleted house
+    }
+    throw new Error('Failed to delete the house');
+  },
+);
+
 const initialState = {
   houses: [],
   status: 'idle',
