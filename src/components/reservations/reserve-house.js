@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { addReservation, getHouseByName } from '../../redux/actions';
 import '../../assests/stylesheets/add-reservation.css';
@@ -66,6 +67,7 @@ const ReserveHouse = () => {
   const validateForm = () => {
     let isValid = true;
     const errors = {};
+    setErrors({});
 
     if (!formData.name.trim()) {
       isValid = false;
@@ -74,12 +76,12 @@ const ReserveHouse = () => {
 
     if (!formData.startDate.trim()) {
       isValid = false;
-      errors.name = 'Start Date is required.';
+      errors.startDate = 'Start Date is required.';
     }
 
     if (formData.numberOfDays <= 0) {
       isValid = false;
-      errors.name = 'numberOfDays is required.';
+      errors.numberOfDays = 'numberOfDays is required.';
     }
 
     setErrors(errors);
@@ -106,6 +108,10 @@ const ReserveHouse = () => {
       dispatch(addReservation(formData, house));
       resetForm();
       navigate('/reservations');
+    } else if (!validateForm()) {
+      Object.values(errors).forEach((error) => {
+        toast.error(error);
+      });
     }
   };
 
@@ -116,7 +122,7 @@ const ReserveHouse = () => {
         <div className="inputs-fields">
           <div className="form-group">
             <label htmlFor="name">
-              Name:
+              House Name:
               <input
                 type="text"
                 name="name"
