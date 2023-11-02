@@ -1,10 +1,15 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../../assests/stylesheets/details.css';
 
 function HouseDetails() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { house } = location.state;
+
+  const handleReserveClick = () => {
+    navigate(`/reserve-house?name=${house.name}`);
+  };
 
   return (
     <section className="house-details">
@@ -45,7 +50,7 @@ function HouseDetails() {
           <p> Representative</p>
         </div>
         <div className="details-button">
-          <button type="button" className="reserve">
+          <button type="button" className="reserve" onClick={handleReserveClick}>
             Reserve
             <img src="https://img.icons8.com/?size=24&id=JV9QvsUAUkOM&format=png" alt="icon" />
           </button>
