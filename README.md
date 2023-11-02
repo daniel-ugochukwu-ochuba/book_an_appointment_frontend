@@ -105,6 +105,8 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
+- SETUP [Backend](https://github.com/danielochuba/house_booking_backend) first
+
 In order to run this project you need:
 
 Web Browser (Chrome recommended)<br>
