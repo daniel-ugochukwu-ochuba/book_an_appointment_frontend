@@ -35,13 +35,22 @@ nav {
   flex-direction: column;
   text-decoration: none;
   z-index: 0;
-  padding: 20px;
+  padding: 40px 0 0 0;
 }
 
 .list.active li {
   list-style: none;
   font-family: lobster, sans-serif;
   font-size: 30px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: all 0.5s;
+}
+
+.list.active li:hover {
+  background-color: rgb(93, 227, 232);
+  overflow: hidden;
 }
 
 footer {
@@ -126,6 +135,7 @@ h2 {
 .menu-footer {
   position: absolute;
   bottom: 0;
+  padding-left: 20px;
 }
 
 .icons {
