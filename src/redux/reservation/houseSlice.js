@@ -74,6 +74,18 @@ export const HouseSlice = createSlice({
       .addCase(fetchUserHouses.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(deleteHouse.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(deleteHouse.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        // Remove the deleted house from the state
+        state.houses = state.houses.filter((house) => house.id !== action.payload);
+      })
+      .addCase(deleteHouse.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
       });
   },
 });
