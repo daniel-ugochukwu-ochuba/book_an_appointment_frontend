@@ -5,7 +5,8 @@
 
 .swiper {
   position: relative;
-  width: 60%;
+  width: 80%;
+  margin: 10px;
 }
 
 .swiper-slide {
@@ -54,7 +55,7 @@
   font-size: 50px;
   color: white;
   position: fixed;
-  top: 30vh;
+  top: 45%;
   right: 0;
   z-index: 10;
 }
@@ -69,7 +70,7 @@
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  top: 30vh;
+  top: 45%;
   left: 0;
   z-index: 10;
   text-align: center;
@@ -82,17 +83,65 @@
   align-items: center;
 }
 
-.delete-btn {
-  border-radius: 28px;
-  font-family: Courier New, Courier, monospace;
-  color: #2a2727;
-  font-size: 13px;
-  margin: 10px 0 35px 0;
-  background: #f4f4f4;
-  padding: 10px 37px 10px 37px;
-  text-decoration: none;
-  border: 1px solid #dce7ed;
-  box-shadow: rgba(116, 114, 114, 0.2) 0 12px 38px 5px, rgba(123, 113, 113, 0.1) 0 0 4px 5px, rgba(215, 213, 213, 0.05) 0 0 0 1px inset;
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(195, 195, 195);
+  padding: 22px 0;
+  width: 100%;
+  border-radius: 25px 25px 0 25px;
+}
+
+.boder-radius {
+  width: 20px;
+  height: 20px;
+}
+
+.square::before,
+.square::after {
+  content: '';
+  position: absolute;
+  background-color: rgb(195, 195, 195);
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: 244px;
+}
+
+.square::after {
+  border-radius: 0 25px 0 0;
+  background-color: white;
+  padding-left: 2px;
+}
+
+.reservation-slide {
+  background-color: white;
+  border-radius: 25px;
+  border: none;
+  margin: 5px 0;
+}
+
+.points {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.circle-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  gap: 30px;
+  filter: invert(70%);
+}
+
+.circle-icon {
+  width: 40px;
+}
+
+.houses-tittle {
+  margin-bottom: 50px;
 }
 
 .delete-btn:hover {
@@ -102,7 +151,20 @@
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 913px) {
+  .delete-btn {
+    border-radius: 28px;
+    font-family: Courier New, Courier, monospace;
+    color: #2a2727;
+    font-size: 13px;
+    margin: 10px 0 35px 0;
+    background: #f4f4f4;
+    padding: 10px 37px 10px 37px;
+    text-decoration: none;
+    border: 1px solid #dce7ed;
+    box-shadow: rgba(116, 114, 114, 0.2) 0 12px 38px 5px, rgba(123, 113, 113, 0.1) 0 0 4px 5px, rgba(215, 213, 213, 0.05) 0 0 0 1px inset;
+  }
+
   .prev,
   .next {
     display: none;
