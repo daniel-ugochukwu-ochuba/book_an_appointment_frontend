@@ -69,7 +69,6 @@ export const HouseSlice = createSlice({
       .addCase(fetchUserHouses.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.houses = action.payload;
-        console.log(action.payload);
       })
       .addCase(fetchUserHouses.rejected, (state, action) => {
         state.status = 'failed';
