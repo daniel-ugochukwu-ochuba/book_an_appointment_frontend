@@ -16,7 +16,6 @@ function Reservation() {
   }, [dispatch]);
 
   const reservations = useSelector((state) => state.reservations.reservations);
-
   return (
     <div className="slideTemplate">
       <Swiper

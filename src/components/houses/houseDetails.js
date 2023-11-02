@@ -10,16 +10,46 @@ function HouseDetails() {
     <section className="house-details">
       <img className="details-img" src={house.image} alt="house" />
       <div className="details-info">
-        <h4>{house.name}</h4>
-        <p>{house.address}</p>
-        <p>{house.description}</p>
-        <p>
-          Price Per Day:
-          {house.price_per_day}
-          $
-        </p>
-        <p>Duration: 48 Months</p>
-        <button type="button" className="reserve">Reserve ⧁</button>
+        <h4>
+          {house.name}
+          <br />
+          <p className="h3">-  $200 deposit upon any House</p>
+        </h4>
+        <div className="details-price">
+          <p>finance Fee</p>
+          <p>
+            {house.price_per_day / 4}
+            $
+          </p>
+        </div>
+        <div className="details-price">
+          <p>Option to pucharse fee</p>
+          <p>
+            {house.price_per_day / 3}
+            $
+          </p>
+        </div>
+        <div className="details-price">
+          <p>Toal Amount payable</p>
+          <p>
+            {house.price_per_day * 48 * 30}
+            $
+          </p>
+        </div>
+        <div className="details-price">
+          <p>Duration</p>
+          <p>48 months</p>
+        </div>
+        <div className="details-apr">
+          <p className="apr">5.9% APR</p>
+          <p> Representative</p>
+        </div>
+        <div className="details-button">
+          <button type="button" className="reserve">
+            Reserve
+            <img src="https://img.icons8.com/?size=24&id=JV9QvsUAUkOM&format=png" alt="icon" />
+          </button>
+        </div>
       </div>
     </section>
   );
