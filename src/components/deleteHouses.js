@@ -32,7 +32,14 @@ function DeleteHouses() {
   return (
     <section className="houses-section">
       <h2>Delete House</h2>
-
+      {status === 'loading' && (
+        <div style={{
+          display: 'block', margin: 'auto', width: '100px',
+        }}
+        >
+          <ReactLoading type="cylon" color="#C3ACD0" height={67} width={75} />
+        </div>
+      )}
       <Swiper
         className="swiper"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
