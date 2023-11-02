@@ -1,9 +1,25 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import Cookies from 'js-cookie';
 
 export const fetchHouses = createAsyncThunk(
   'reservation/fetchReservation',
   async () => {
     const response = await fetch('http://localhost:3000/api/v1/houses');
+    const data = await response.json();
+    return data;
+  },
+);
+
+export const fetchUserHouses = createAsyncThunk(
+  'reservation/fetchUserHouses',
+  async () => {
+    const token = Cookies.get('token');
+    const response = await fetch('http://localhost:3000/api/v1/delete_houses',
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
     const data = await response.json();
     return data;
   },
