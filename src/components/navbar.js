@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <nav className="dropdown">
-      <button type="button" className={`dropbtn ${isOpen ? 'active' : ''}`} onClick={toggleDropdown}>
+      <button type="button" aria-label="Save" className="dropbtn" onClick={toggleDropdown}>
         <span className={`dropbtn__icon1 ${isOpen ? 'active' : ''}`} />
         <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} />
       </button>
@@ -26,7 +26,7 @@ function Navbar() {
           <Link to="/houses">Houses</Link>
         </li>
         <li>
-          <Link to="/reserve">Reserve</Link>
+          <Link to="/reserve-house">Reserve</Link>
         </li>
         {Cookies.get('token') && (
         <li>
