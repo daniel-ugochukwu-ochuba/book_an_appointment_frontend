@@ -32,6 +32,9 @@ function Navbar() {
         </li>
         )}
         <li>
+          <Link to="/delete_houses">Delete House</Link>
+        </li>
+        <li>
           <Link to="/reservations">Reservations</Link>
         </li>
         <div className="menu-footer">
