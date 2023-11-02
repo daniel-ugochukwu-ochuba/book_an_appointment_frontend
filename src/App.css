@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Manrope:wght@300&display=swap');
 
 body {
   box-sizing: border-box;
@@ -10,7 +11,10 @@ a {
   text-decoration: none;
   color: black;
 }
-
+p {
+  font-family: 'Manrope', sans-serif;
+  color: rgb(92, 92, 92);
+}
 nav {
   position: fixed;
   top: 0;
@@ -50,6 +54,7 @@ nav {
 
 .list.active li:hover {
   background-color: rgb(93, 227, 232);
+  color: white;
   overflow: hidden;
 }
 
@@ -129,7 +134,8 @@ h2 {
 }
 
 .logo {
-  width: 200px;
+  width: 250px;
+  padding: 30px;
 }
 
 .menu-footer {
@@ -145,6 +151,7 @@ h2 {
 
 .icons img {
   width: 20px;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
