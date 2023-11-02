@@ -11,7 +11,7 @@ function Reservations() {
   return (
     <>
       <section className="houses-section">
-        <h1 className="reservation-title" style={{ textAlign: 'center' }}> Reservations</h1>
+        <h2 className="reservation-title" style={{ textAlign: 'center' }}> Reservations</h2>
 
         <Reservation />
       </section>

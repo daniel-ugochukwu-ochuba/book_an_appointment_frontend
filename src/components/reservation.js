@@ -9,7 +9,6 @@ import {
 import { fetchReservation } from '../redux/reservation/reservationSlice';
 
 function Reservation() {
-  const slides = Array.from({ length: 10 }, (_, index) => index + 1);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +16,6 @@ function Reservation() {
   }, [dispatch]);
 
   const reservations = useSelector((state) => state.reservations.reservations);
-  console.log(reservations);
   return (
     <div className="slideTemplate">
       <Swiper
@@ -43,8 +41,8 @@ function Reservation() {
           nextEl: '.next',
         }}
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide} style={{ display: 'flex' }} className="house">
+        {reservations.map((slide) => (
+          <SwiperSlide key={slide.id} style={{ display: 'flex' }} className="house">
             <div className="circle">
               <div className="house-img" />
             </div>
@@ -69,8 +67,8 @@ function Reservation() {
             </div>
           </SwiperSlide>
         ))}
-        <div className="prev">«</div>
-        <div className="next">»</div>
+        <div className="prev">◁</div>
+        <div className="next">▷</div>
       </Swiper>
     </div>
   );
