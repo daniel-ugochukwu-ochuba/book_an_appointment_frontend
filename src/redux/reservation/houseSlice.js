@@ -48,6 +48,18 @@ export const HouseSlice = createSlice({
       .addCase(fetchHouses.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(fetchUserHouses.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchUserHouses.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.houses = action.payload;
+        console.log(action.payload);
+      })
+      .addCase(fetchUserHouses.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
       });
   },
 });
