@@ -16,7 +16,8 @@
 }
 
 .house-img {
-  width: 100%;
+  max-width: 200px;
+  height: 200px;
   background-size: cover;
   transition: transform 0.3s ease;
 }
