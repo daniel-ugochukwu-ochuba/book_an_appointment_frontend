@@ -82,6 +82,26 @@
   align-items: center;
 }
 
+.delete-btn {
+  border-radius: 28px;
+  font-family: Courier New, Courier, monospace;
+  color: #2a2727;
+  font-size: 13px;
+  margin: 10px 0 35px 0;
+  background: #f4f4f4;
+  padding: 10px 37px 10px 37px;
+  text-decoration: none;
+  border: 1px solid #dce7ed;
+  box-shadow: rgba(116, 114, 114, 0.2) 0 12px 38px 5px, rgba(123, 113, 113, 0.1) 0 0 4px 5px, rgba(215, 213, 213, 0.05) 0 0 0 1px inset;
+}
+
+.delete-btn:hover {
+  background: #aec8d6;
+  color: #fbfbfb;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .prev,
   .next {

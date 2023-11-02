@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import Cookies from 'js-cookie';
 
 export const fetchHouses = createAsyncThunk(
   'reservation/fetchReservation',
@@ -6,6 +7,35 @@ export const fetchHouses = createAsyncThunk(
     const response = await fetch('http://localhost:3000/api/v1/houses');
     const data = await response.json();
     return data;
+  },
+);
+
+export const fetchUserHouses = createAsyncThunk(
+  'reservation/fetchUserHouses',
+  async () => {
+    const token = Cookies.get('token');
+    const response = await fetch('http://localhost:3000/api/v1/delete_houses',
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    const data = await response.json();
+    return data;
+  },
+);
+
+export const deleteHouse = createAsyncThunk(
+  'house/deleteHouse',
+  async (houseId) => {
+    const response = await fetch(`http://localhost:3000/api/v1/houses/${houseId}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      return houseId; // Return the ID of the deleted house
+    }
+    throw new Error('Failed to delete the house');
   },
 );
 
@@ -30,6 +60,29 @@ export const HouseSlice = createSlice({
         state.houses = action.payload;
       })
       .addCase(fetchHouses.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(fetchUserHouses.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchUserHouses.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.houses = action.payload;
+      })
+      .addCase(fetchUserHouses.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(deleteHouse.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(deleteHouse.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        // Remove the deleted house from the state
+        state.houses = state.houses.filter((house) => house.id !== action.payload);
+      })
+      .addCase(deleteHouse.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
