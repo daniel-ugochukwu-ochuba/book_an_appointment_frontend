@@ -24,7 +24,7 @@ function Houses() {
 
   return (
     <section className="houses-section">
-      <h2>Houses</h2>
+      <h2 className="houses-tittle">Houses</h2>
       <Swiper
         className="swiper"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
