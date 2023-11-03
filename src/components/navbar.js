@@ -1,12 +1,19 @@
 import Cookies from 'js-cookie';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import '../assests/stylesheets/navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogout = () => {
+    Cookies.remove('token');
+    navigate('/login');
   };
 
   return (
@@ -23,20 +30,35 @@ function Navbar() {
         <li>
           <Link to="/houses">Houses</Link>
         </li>
-        <li>
-          <Link to="/reserve-house">Reserve</Link>
-        </li>
         {Cookies.get('token') && (
-        <li>
-          <Link to="/add-house">Add House</Link>
-        </li>
+          <>
+            <li>
+              <Link to="/add-house">Add House</Link>
+            </li>
+            <li>
+              <Link to="/delete_houses">Delete House</Link>
+            </li>
+            <li>
+              <Link to="/reserve-house">Reserve</Link>
+            </li>
+            <li>
+              <Link to="/reservations">Reservations</Link>
+            </li>
+            <li>
+              <button className="logout-button" onClick={handleLogout} type="button">Logout</button>
+            </li>
+          </>
         )}
-        <li>
-          <Link to="/delete_houses">Delete House</Link>
-        </li>
-        <li>
-          <Link to="/reservations">Reservations</Link>
-        </li>
+        {!Cookies.get('token') && (
+          <>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+          </>
+        )}
         <div className="menu-footer">
           <div className="icons">
             <img className="logo" src="https://cdn-icons-png.flaticon.com/128/733/733635.png" alt="logo" />
