@@ -23,7 +23,7 @@ function Navbar() {
         <span className={`dropbtn__icon2 ${isOpen ? 'active' : ''}`} />
       </button>
       <ul className={`list ${isOpen ? 'active' : ''}`}>
-        <img className="logo" src="https://www.freepnglogos.com/uploads/logo-home-png/vector-brush-home-logo-download-vector-logos-6.png" alt="logo" />
+        <img className="logo" src="https://cdn.freelogodesign.org/files/dca7d4dff3b547d8991b09b057a11880/thumb/logo_200x200.png?v=638345321150000000" alt="logo" />
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -33,10 +33,13 @@ function Navbar() {
         {Cookies.get('token') && (
           <>
             <li>
-              <Link to="/reserve-house">Reserve</Link>
+              <Link to="/add-house">Add House</Link>
             </li>
             <li>
-              <Link to="/add-house">Add House</Link>
+              <Link to="/delete_houses">Delete House</Link>
+            </li>
+            <li>
+              <Link to="/reserve-house">Reserve</Link>
             </li>
             <li>
               <Link to="/reservations">Reservations</Link>

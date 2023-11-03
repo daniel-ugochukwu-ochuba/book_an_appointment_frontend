@@ -24,7 +24,7 @@ function Houses() {
 
   return (
     <section className="houses-section">
-      <h2>Houses</h2>
+      <h2 className="houses-tittle">Houses</h2>
       <Swiper
         className="swiper"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -60,13 +60,21 @@ function Houses() {
               </div>
               <div className="details">
                 <h3>{slide.name}</h3>
-                <p>{slide.address}</p>
-                <p>{slide.description}</p>
+                <p className="points">. . . . . . . . . . . . . . . . . . . . .</p>
                 <p>
-                  Price Per Day:
+                  Contry:&nbsp;
+                  {slide.address}
+                  ,&nbsp;
+                  {slide.description}
+                  , on a price of&nbsp;
                   {slide.price_per_day}
-                  $
+                  $ per day
                 </p>
+                <div className="circle-icons">
+                  <img className="circle-icon" src="https://cdn-icons-png.flaticon.com/128/665/665209.png" alt="icons" />
+                  <img className="circle-icon" src="https://cdn-icons-png.flaticon.com/128/665/665228.png" alt="icons" />
+                  <img className="circle-icon" src="https://cdn-icons-png.flaticon.com/128/665/665211.png" alt="icons" />
+                </div>
               </div>
             </Link>
           </SwiperSlide>

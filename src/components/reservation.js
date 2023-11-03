@@ -42,28 +42,34 @@ function Reservation() {
         }}
       >
         {reservations.map((slide) => (
-          <SwiperSlide key={slide.id} style={{ display: 'flex' }} className="house">
-            <div className="circle">
-              <div className="house-img" />
+          <SwiperSlide key={slide.id} style={{ display: 'flex' }} className="reservation-slide">
+            <div className="square">
+              <img className="house-img" src={slide.house_image} alt="house" />
             </div>
             <div className="details">
-              <h3>NAME</h3>
-              <p>address: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p>description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p>Price Per Day: 100$</p>
-              <div className="days-info">
-                <p className="reserved-date">
-                  Start:
-                  {' '}
-                  <em>20 oct 2023</em>
-                  {' '}
-                </p>
-                <p className="days">
-                  Days:
-                  {' '}
-                  <strong>23</strong>
-                </p>
-              </div>
+              <div className="border-radius" />
+              <h3>{slide.house_name}</h3>
+              <p>
+                Days reserverd:&nbsp;
+                {slide.number_of_days}
+              </p>
+              <p>
+                startting date:&nbsp;
+                {slide.start_date}
+              </p>
+              <p>
+                Price Per day:&nbsp;
+                {slide.price / slide.number_of_days}
+              </p>
+              <p>
+                Total Amount:&nbsp;
+                {slide.price}
+              </p>
+            </div>
+            <div className="circle-icons">
+              <img className="circle-icon" src="https://cdn-icons-png.flaticon.com/128/665/665209.png" alt="icons" />
+              <img className="circle-icon" src="https://cdn-icons-png.flaticon.com/128/665/665228.png" alt="icons" />
+              <img className="circle-icon" src="https://cdn-icons-png.flaticon.com/128/665/665211.png" alt="icons" />
             </div>
           </SwiperSlide>
         ))}
