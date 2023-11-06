@@ -16,7 +16,17 @@ function Navbar() {
     navigate('/login');
   };
   useEffect(() => {
-   
+    const handleBodyClick = (event) => {
+      if (isOpen && event.target.closest('.dropdown') === null) {
+        setIsOpen(false);
+      }
+    };
+
+    document.body.addEventListener('click', handleBodyClick);
+
+    return () => {
+      document.body.removeEventListener('click', handleBodyClick);
+    };
   }, [isOpen]);
 
   return (
