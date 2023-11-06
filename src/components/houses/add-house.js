@@ -160,7 +160,12 @@ const AddHouse = () => {
             value={formData.image}
             onChange={handleChange}
           />
-        
+          <img
+            src={formData.image}
+            alt="Preview"
+            className="preview-image"
+            style={{ display: 'none', height: '100px', width: '100px' }}
+          />
           {errors.image && !isImageValid && <span className="error">{errors.image}</span>}
           <button className="add-house-button" type="submit">Add House</button>
         </form>
