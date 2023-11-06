@@ -31,7 +31,7 @@ function DeleteHouses() {
   const status = useSelector((state) => state.houses.status);
   return (
     <section className="houses-section">
-      <h2>Delete House</h2>
+      <h2 className="houses-tittle">Delete House</h2>
       {status === 'loading' && (
         <div style={{
           display: 'block', margin: 'auto', width: '100px',

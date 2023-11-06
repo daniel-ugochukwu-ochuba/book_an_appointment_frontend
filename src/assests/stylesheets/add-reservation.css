@@ -113,3 +113,17 @@ label {
   margin-top: 5px;
   font-family: 'Roboto', sans-serif;
 }
+
+@media (max-width: 768px) {
+  .add-reservation-title {
+    font-size: 40px;
+  }
+
+  .add-reservation-form {
+    width: 90%;
+  }
+
+  .inputs-fields {
+    flex-direction: column;
+  }
+}

@@ -160,9 +160,7 @@ h2 {
   .container {
     background-size: 300px;
   }
-}
 
-@media (max-height: 768px) {
   .list.active li {
     padding: 0 20px;
   }
@@ -174,5 +172,11 @@ h2 {
 
   .icons {
     gap: 10px;
+  }
+}
+
+@media (max-height: 700px) {
+  .menu-footer {
+    display: none;
   }
 }
