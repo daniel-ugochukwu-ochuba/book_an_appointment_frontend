@@ -15,6 +15,7 @@ function Navbar() {
     Cookies.remove('token');
     navigate('/login');
   };
+
   useEffect(() => {
     const handleBodyClick = (event) => {
       if (isOpen && event.target.closest('.dropdown') === null) {
@@ -42,24 +43,24 @@ function Navbar() {
       <ul className={`list ${isOpen ? 'active' : ''}`}>
         <img className="logo" src="https://cdn.freelogodesign.org/files/dca7d4dff3b547d8991b09b057a11880/thumb/logo_200x200.png?v=638345321150000000" alt="logo" />
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={closeNavbar}>Home</Link>
         </li>
         <li>
-          <Link to="/houses">Houses</Link>
+          <Link to="/houses" onClick={closeNavbar}>Houses</Link>
         </li>
         {Cookies.get('token') && (
           <>
             <li>
-              <Link to="/add-house">Add House</Link>
+              <Link to="/add-house" onClick={closeNavbar}>Add House</Link>
             </li>
             <li>
-              <Link to="/delete_houses">Delete House</Link>
+              <Link to="/delete_houses" onClick={closeNavbar}>Delete House</Link>
             </li>
             <li>
-              <Link to="/reserve-house">Reserve</Link>
+              <Link to="/reserve-house" onClick={closeNavbar}>Reserve</Link>
             </li>
             <li>
-              <Link to="/reservations">Reservations</Link>
+              <Link to="/reservations" onClick={closeNavbar}>Reservations</Link>
             </li>
             <li>
               <button className="logout-button" onClick={handleLogout} type="button">Logout</button>
@@ -69,10 +70,10 @@ function Navbar() {
         {!Cookies.get('token') && (
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/login" onClick={closeNavbar}>Login</Link>
             </li>
             <li>
-              <Link to="/register">Register</Link>
+              <Link to="/register" onClick={closeNavbar}>Register</Link>
             </li>
           </>
         )}
