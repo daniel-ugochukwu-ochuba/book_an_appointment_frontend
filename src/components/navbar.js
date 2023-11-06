@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../assests/stylesheets/navbar.css';
 
@@ -15,6 +15,9 @@ function Navbar() {
     Cookies.remove('token');
     navigate('/login');
   };
+  useEffect(() => {
+   
+  }, [isOpen]);
 
   return (
     <nav className="dropdown">
