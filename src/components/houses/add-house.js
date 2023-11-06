@@ -26,7 +26,19 @@ const AddHouse = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (e.target.name === 'image') {
       setBackgroundImage(e.target.value);
-    
+      imageTester.src = e.target.value;
+
+      imageTester.onload = () => {
+        setIsImageLoading(false);
+        setIsImageValid(true);
+        document.querySelector('.preview-image').style.display = 'block';
+      };
+
+      imageTester.onerror = () => {
+        setIsImageLoading(false);
+        setIsImageValid(false);
+        document.querySelector('.preview-image').style.display = 'none';
+      };
     }
   };
 
@@ -148,7 +160,7 @@ const AddHouse = () => {
             value={formData.image}
             onChange={handleChange}
           />
-          
+        
           {errors.image && !isImageValid && <span className="error">{errors.image}</span>}
           <button className="add-house-button" type="submit">Add House</button>
         </form>
