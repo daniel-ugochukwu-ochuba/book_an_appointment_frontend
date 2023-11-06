@@ -29,6 +29,10 @@ function Navbar() {
     };
   }, [isOpen]);
 
+  const closeNavbar = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="dropdown">
       <button type="button" aria-label="Save" className="dropbtn" onClick={toggleDropdown}>
