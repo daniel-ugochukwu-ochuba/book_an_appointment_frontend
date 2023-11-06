@@ -17,11 +17,16 @@ const AddHouse = () => {
   });
   const [errors, setErrors] = useState({});
   const [backgroundImage, setBackgroundImage] = useState('');
+  const [isImageValid, setIsImageValid] = useState(true);
+
+  const [isImageLoading, setIsImageLoading] = useState(true);
+  const imageTester = new Image();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     if (e.target.name === 'image') {
       setBackgroundImage(e.target.value);
+    
     }
   };
 
@@ -52,6 +57,9 @@ const AddHouse = () => {
     if (!formData.image.trim()) {
       isValid = false;
       errors.image = 'Image is required.';
+    } else if (!isImageValid || isImageLoading) {
+      isValid = false;
+      errors.image = 'Invalid image URL.';
     }
 
     setErrors(errors);
@@ -78,6 +86,7 @@ const AddHouse = () => {
       navigate('/houses');
     }
   };
+
   const pageStyle = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'contain',
@@ -139,7 +148,8 @@ const AddHouse = () => {
             value={formData.image}
             onChange={handleChange}
           />
-          {errors.image && <span className="error">{errors.image}</span>}
+          
+          {errors.image && !isImageValid && <span className="error">{errors.image}</span>}
           <button className="add-house-button" type="submit">Add House</button>
         </form>
       </div>
