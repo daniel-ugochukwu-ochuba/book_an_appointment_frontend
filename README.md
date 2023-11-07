@@ -138,7 +138,7 @@ Go to your /book_an_appointment_frontend folder:
 
 ### Deployment
 
-Project Deployed using this project using:<br>[Render](https://www.render.com)
+Project Deployed using this project using:<br>[Render](https://www.heroku.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
