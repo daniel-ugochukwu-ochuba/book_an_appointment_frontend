@@ -1,6 +1,7 @@
 {
   "name": "book_an_appointment_frontendnd",
   "version": "0.1.0",
+  "homepage": "https://ahmedeid6842.github.io/book_an_appointment_frontend",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -29,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build" 
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",

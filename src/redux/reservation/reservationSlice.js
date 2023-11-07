@@ -1,10 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Cookies from 'js-cookie';
 
+const HOST = "https://house-booking-4ded8de71d50.herokuapp.com"
+
 export const fetchReservation = createAsyncThunk('reservation/fetchReservation',
   async () => {
     const token = Cookies.get('token');
-    const response = await fetch('http://localhost:3000/api/v1/reservations',
+    const response = await fetch(`${HOST}/api/v1/reservations`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
