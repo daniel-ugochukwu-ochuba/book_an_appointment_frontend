@@ -146,11 +146,11 @@ Project Deployed using this project using:<br>[Render](https://www.render.com)
 
 > 👤 **Ahmed Eid**
 
--GitHub: [@ahmedeid](https://github.com/ahmedeid6842)
+- GitHub: [@ahmedeid](https://github.com/ahmedeid6842)
 
 > 👤 **Gerson Higgins**
 
-> -GitHub: [@gersonhiggins](https://github.com/gersonhiggins)
+- GitHub: [@gersonhiggins](https://github.com/gersonhiggins)
 
 > 👤 **Micronaut Daniel Ochuba Ugochukwu**
 
