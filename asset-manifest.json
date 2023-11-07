@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/book_an_appointment_frontend/static/css/main.8c90eca2.css",
-    "main.js": "/book_an_appointment_frontend/static/js/main.3c68e93a.js",
+    "main.js": "/book_an_appointment_frontend/static/js/main.8abf6cab.js",
     "static/js/787.b6989506.chunk.js": "/book_an_appointment_frontend/static/js/787.b6989506.chunk.js",
     "static/media/house_PNG44.png": "/book_an_appointment_frontend/static/media/house_PNG44.a2388384b81691813a7f.png",
     "index.html": "/book_an_appointment_frontend/index.html",
     "main.8c90eca2.css.map": "/book_an_appointment_frontend/static/css/main.8c90eca2.css.map",
-    "main.3c68e93a.js.map": "/book_an_appointment_frontend/static/js/main.3c68e93a.js.map",
+    "main.8abf6cab.js.map": "/book_an_appointment_frontend/static/js/main.8abf6cab.js.map",
     "787.b6989506.chunk.js.map": "/book_an_appointment_frontend/static/js/787.b6989506.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8c90eca2.css",
-    "static/js/main.3c68e93a.js"
+    "static/js/main.8abf6cab.js"
   ]
 }
