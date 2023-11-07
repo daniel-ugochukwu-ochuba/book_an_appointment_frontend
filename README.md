@@ -128,7 +128,6 @@ Go to your /book_an_appointment_frontend folder:
 ```sh
   cd /book_an_appointment_frontend
   npm install
-  npm start
 ```
 
 ### Usage
@@ -139,11 +138,19 @@ Go to your /book_an_appointment_frontend folder:
 
 ### Deployment
 
-I deployed this project using:<br>[Render](https://www.render.com)
+Project Deployed using this project using:<br>[Render](https://www.render.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
+
+> 👤 **Ahmed Eid**
+
+-GitHub: [@ahmedeid](https://github.com/ahmedeid6842)
+
+> 👤 **Gerson Higgins**
+
+> -GitHub: [@gersonhiggins](https://github.com/gersonhiggins)
 
 > 👤 **Micronaut Daniel Ochuba Ugochukwu**
 
@@ -180,7 +187,7 @@ Original design idea [Murat Korkmaz on Behance](https://www.behance.net/muratk)
 
 - **["How can I see more projects associated with these authors?"]**
 
-   - Check my [@ahmed](https://github.com/ahmedeid6842)
+   - Check [@ahmed](https://github.com/ahmedeid6842), [@gersonhiggins](https://github.com/gersonhiggins), [@danielochuba](https://github.com/danielochuba).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
