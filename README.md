@@ -95,7 +95,7 @@ Link: [Back end](https://github.com/danielochuba/house_booking_backend)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [lIVE DEMO]()
+- [lIVE DEMO](https://houses-booking-8105175e8e55.herokuapp.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
