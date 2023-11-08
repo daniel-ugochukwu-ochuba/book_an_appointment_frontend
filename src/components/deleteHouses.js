@@ -16,7 +16,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css';
 
-function DeleteHouses() {
+const DeleteHouses = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -95,6 +95,6 @@ function DeleteHouses() {
       </Swiper>
     </section>
   );
-}
+};
 
 export default DeleteHouses;
