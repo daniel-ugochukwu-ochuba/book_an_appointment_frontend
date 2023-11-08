@@ -8,7 +8,7 @@ import {
 } from 'swiper/modules';
 import { fetchReservation } from '../redux/reservation/reservationSlice';
 
-function Reservation() {
+const Reservation = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -78,6 +78,6 @@ function Reservation() {
       </Swiper>
     </div>
   );
-}
+};
 
 export default Reservation;
