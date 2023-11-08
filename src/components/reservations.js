@@ -7,16 +7,14 @@ import 'swiper/css/scrollbar';
 import 'swiper/css';
 import '../assests/stylesheets/reserve.css';
 
-function Reservations() {
-  return (
-    <>
-      <section className="houses-section">
-        <h2 className="reservation-title" style={{ textAlign: 'center' }}> Reservations</h2>
+const Reservations = () => (
+  <>
+    <section className="houses-section">
+      <h2 className="reservation-title" style={{ textAlign: 'center' }}> Reservations</h2>
 
-        <Reservation />
-      </section>
-    </>
-  );
-}
+      <Reservation />
+    </section>
+  </>
+);
 
 export default Reservations;
