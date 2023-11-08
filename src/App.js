@@ -15,33 +15,31 @@ import ReserveHouse from './components/reservations/reserve-house';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
-function App() {
-  return (
+const App = () => (
+  <>
     <>
-      <>
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route exact path="/" element={<PrivateRoute />}>
-              <Route path="/houses" element={<Houses />} />
-              <Route path="/add-house" element={<AddHouse />} />
-              <Route path="/reservations" element={<Reservations />} />
-              <Route path="/reserve" element={<Houses />} />
-              <Route path="/delete_houses" element={<DeleteHouses />} />
-              <Route path="/houses/:id" element={<HouseDetails />} />
-              <Route path="/reserve-house" element={<ReserveHouse />} />
-            </Route>
-          </Routes>
-          <ToastContainer />
-        </main>
-      </>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route exact path="/" element={<PrivateRoute />}>
+            <Route path="/houses" element={<Houses />} />
+            <Route path="/add-house" element={<AddHouse />} />
+            <Route path="/reservations" element={<Reservations />} />
+            <Route path="/reserve" element={<Houses />} />
+            <Route path="/delete_houses" element={<DeleteHouses />} />
+            <Route path="/houses/:id" element={<HouseDetails />} />
+            <Route path="/reserve-house" element={<ReserveHouse />} />
+          </Route>
+        </Routes>
+        <ToastContainer />
+      </main>
     </>
-  );
-}
+  </>
+);
 
 export default App;

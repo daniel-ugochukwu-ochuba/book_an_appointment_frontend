@@ -152,7 +152,7 @@ Project Deployed using this project using:<br>[Heroku](https://www.heroku.com)
 
 - GitHub: [@gersonhiggins](https://github.com/gersonhiggins)
 
-> 👤 **Micronaut Daniel Ochuba Ugochukwu**
+> 👤 **Daniel Ochuba Ugochukwu**
 
 - GitHub: [@danielochuba](https://github.com/danielochuba)
 - Twitter: [@ochuba_daniel](https://twitter.com/ochuba_daniel)

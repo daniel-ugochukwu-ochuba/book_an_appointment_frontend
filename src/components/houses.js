@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css';
 
-function Houses() {
+const Houses = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHouses());
@@ -84,6 +84,6 @@ function Houses() {
       </Swiper>
     </section>
   );
-}
+};
 
 export default Houses;
