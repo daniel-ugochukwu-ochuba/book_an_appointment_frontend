@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../../assests/stylesheets/details.css';
 
-function HouseDetails() {
+const HouseDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { house } = location.state;
@@ -58,6 +58,6 @@ function HouseDetails() {
       </div>
     </section>
   );
-}
+};
 
 export default HouseDetails;
