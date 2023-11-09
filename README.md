@@ -18,6 +18,7 @@
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
     - [LINK TO BACK-END](#back-end)
+  - [Kanban Board](#kanban-board)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -102,6 +103,13 @@ Link: [Back end](https://github.com/danielochuba/house_booking_backend)
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
+
+## KanBan Board <a name="kanban-board"></a>
+
+- [kanban Board](https://github.com/users/danielochuba/projects/7/views/1)
+- Initial State.
+  ![image](https://github.com/ahmedeid6842/book_an_appointment_frontend/assets/128397949/7f394073-b7c7-4b15-a0f7-944f9119359c)
+- 3 People on this team.
 
 ### Prerequisites
 
