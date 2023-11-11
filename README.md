@@ -25,6 +25,7 @@
   - [Usage](#usage)
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
+- [✍️ API Documentation](#api-documentation)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -141,6 +142,10 @@ Go to your /book_an_appointment_frontend folder:
 Project Deployed using this project using:<br>[Heroku](https://www.heroku.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ✍️ API Documentation <a name="api-documentation"></a>
+
+#### Link to Swagger API Docs: [API Documentation](https://house-booking-4ded8de71d50.herokuapp.com/api-docs/index.html) 
 
 ## 👥 Authors <a name="authors"></a>
 
