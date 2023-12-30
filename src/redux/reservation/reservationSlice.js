@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 export const fetchReservation = createAsyncThunk('reservation/fetchReservation',
   async () => {
     const token = Cookies.get('token');
-    const response = await fetch('http://localhost:3000/api/v1/reservations',
+    const response = await fetch('https://rails-6zfj.onrender.com/api/v1/reservations',
       {
         headers: {
           Authorization: `Bearer ${token}`,
