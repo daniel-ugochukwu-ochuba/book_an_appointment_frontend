@@ -29,7 +29,7 @@ export const addHouseSuccess = (houseData) => ({
 
 export const login = (username, password) => async (dispatch) => {
   try {
-    const response = await axios.post('http://127.0.0.1:3000/api/v1/auth/login', { username, password });
+    const response = await axios.post('https://rails-6zfj.onrender.com/api/v1/auth/login', { username, password });
     const { token } = response.data;
     Cookies.set('token', token, { expires: 7 });
 
@@ -45,7 +45,7 @@ export const login = (username, password) => async (dispatch) => {
 
 export const register = (username, password) => async (dispatch) => {
   try {
-    const response = await axios.post('http://127.0.0.1:3000/api/v1/auth/register', { username, password });
+    const response = await axios.post('https://rails-6zfj.onrender.com/api/v1/auth/register', { username, password });
     const { token } = response.data;
     Cookies.set('token', token, { expires: 7 });
 
@@ -63,7 +63,7 @@ export const addHouse = (houseData) => async (dispatch) => {
   try {
     const token = Cookies.get('token');
 
-    const response = await axios.post('http://127.0.0.1:3000/api/v1/houses', houseData, {
+    const response = await axios.post('https://rails-6zfj.onrender.com/api/v1/houses', houseData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -83,7 +83,7 @@ export const addHouse = (houseData) => async (dispatch) => {
 
 export const getHouseByName = async (name) => {
   try {
-    const response = await axios.get(`http://127.0.0.1:3000/api/v1/houses/find_by_name?name=${name}`);
+    const response = await axios.get(`https://rails-6zfj.onrender.com/api/v1/houses/find_by_name?name=${name}`);
     return response.data;
   } catch (error) {
     if (error.response && error.response.data && error.response.data.error) {
@@ -99,7 +99,7 @@ export const addReservation = (reservationData, houseData) => async (dispatch) =
   try {
     const token = Cookies.get('token');
 
-    const response = await axios.post('http://127.0.0.1:3000//api/v1/reservations', { number_of_days: reservationData.numberOfDays, start_date: reservationData.startDate, house_id: houseData.id }, {
+    const response = await axios.post('https://rails-6zfj.onrender.com/api/v1/reservations', { number_of_days: reservationData.numberOfDays, start_date: reservationData.startDate, house_id: houseData.id }, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
